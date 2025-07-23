@@ -1,11 +1,12 @@
 # Use nginx alpine image for small size and security
 FROM nginx:alpine
 
-# Copy custom nginx configuration
-COPY website/nginx.conf /etc/nginx/nginx.conf
 
-# Copy website files to nginx html directory
-COPY website/ /usr/share/nginx/html/
+# Copy custom nginx configuration from root
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Copy all web files from root to nginx html directory
+COPY . /usr/share/nginx/html/
 
 # Remove Dockerfile and other non-web files from the html directory
 RUN rm -f /usr/share/nginx/html/Dockerfile \
