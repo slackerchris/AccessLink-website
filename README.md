@@ -1,3 +1,26 @@
+## 🐳 Docker
+
+You can build and run this website using Docker. This is useful for local testing or deploying to any server that supports Docker.
+
+### Build the Docker image
+
+```bash
+docker build -t accesslink-website .
+```
+
+### Run the Docker container
+
+```bash
+docker run -d -p 8080:8080 --name accesslink-website accesslink-website
+```
+
+The site will be available at [http://localhost:8080](http://localhost:8080).
+
+### Stop and remove the container
+
+```bash
+docker stop accesslink-website && docker rm accesslink-website
+```
 # AccessLink LGBTQ+ Website
 
 A modern, accessible website showcasing the AccessLink LGBTQ+ mobile app - connecting disabled LGBTQ+ individuals with inclusive, accessible businesses and community events.
